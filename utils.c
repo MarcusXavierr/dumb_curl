@@ -11,7 +11,7 @@ const char* parse_input(int argc, const char* argv[argc + 1]) {
     return argv[1];
 }
 
-size_t request_callback(char *buffer, size_t itemsize, size_t numitems, void* _) {
+size_t request_callback(char *buffer, size_t itemsize, size_t numitems, void* _ __attribute__((unused))) {
     size_t bytes = itemsize * numitems;
     for (size_t i = 0; i < numitems; i++) {
         printf("%c", buffer[i]);
